@@ -29,7 +29,8 @@ The trained model has a memory of 300+MB. I compressed this model using ONNX qua
 
 The compressed model is deployed to HuggingFace Spaces Gradio App. The implementation can be found in `deployment` folder or [here](https://huggingface.co/spaces/msideadman/multilabel-book-genre-classifier) 
 
-<img src = "deployment/for_gradio_app.PNG" width="800" height="400">
+![Nut Recognizer App](deployment/for_gradio_app.PNG)
+
 
 ## Web Deployment
 Deployed a Flask App built to take descprition and show the genres as output. Check `flask ` branch. The website is live [here](https://multilabel-book-genre-classifier.onrender.com) 
