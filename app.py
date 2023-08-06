@@ -18,7 +18,7 @@ def index():
     else:
         return render_template("index.html")
 
-def predict_genres(input_text):
+def predict_colors(input_text):
     response = requests.post("https://nasrin2023ripa-rainbow-genres-cover-ml-classifier.hf.space/run/predict", json={
         "data": [
             input_text
