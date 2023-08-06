@@ -14,7 +14,7 @@ def index():
         for idx, label in enumerate(labels):
             label_text = label_text + label
             if idx != len(labels)-1: label_text = label_text + ", "
-        return render_template("result.html", input_text=input_text, output_text=label_text)
+        return render_template("results.html", input_text=input_text, output_text=label_text)
     else:
         return render_template("index.html")
 
