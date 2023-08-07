@@ -1,4 +1,4 @@
-# Multilabel Book Genre Cover Hues 🌈
+# 🌈 Multilabel Book Genre Cover Hues 
 
 
 Welcome to the Multilabel Book Genre Cover Hues repository! This project encompasses a comprehensive text classification model pipeline, including data collection, model training, deployment, and user-friendly web interfaces for predicting book cover colors based on different genres.
