@@ -1,47 +1,52 @@
-# Multilabel-Book-Genre-Cover-Hues
+# Multilabel Book Genre Cover Hues
 
-A text classification model from data collection, model training, and deployment. <br/>
-The model can classify 58 book cover colors for 7575 numbers of different book genres <br/>The keys of `deployment\color_types_encoded50.json` shows the book cover colors for top 10 genres of each book.
+Welcome to the Multilabel Book Genre Cover Hues repository! This project encompasses a comprehensive text classification model pipeline, including data collection, model training, deployment, and user-friendly web interfaces for predicting book cover colors based on different genres.
 
- ## Data Collection
+## Introduction
 
-Data was collected from the Website: https://www.smashwords.com <br/>
-The data collection process is divided into 3 steps:
+The main objective of this project is to develop a robust text classification model capable of associating 58 distinct book cover colors with an extensive array of 7575 diverse book genres. The keys within the `deployment\color_types_encoded50.json` provide insights into the top 10 genres for each book, revealing the corresponding book cover colors.
 
-1. **Book URL Scraping:** The book urls were scraped with `scraper\smashbook_title_urls.py` and the urls are stored along with book title in `scraper\smashbook_urls_1001.csv` and `scraper\smashbook_urls_2001.csv`.
-2. **Book Details Scraping:** Using the urls, book description and genres are scraped with `scraper\smashbook_details.py` and they are stored in `scraper\smashbook_detils1.csv` and `scraper\smashbook_detils_2.csv`.
-3. Finally, I joined the above 2 csv files (smashbook_details1.csv and smashbook_details_2.csv) by using another Python code `scraper/joining.py` and the merged csv file is in scraper/book_details_merged_tables.csv.
+## Data Collection
 
-In total, I scraped 21200+ book details
+The primary dataset was sourced from the esteemed website [Smashwords](https://www.smashwords.com). The data collection phase involved three key steps:
+
+1. **Book URL Scraping:** Book URLs were systematically gathered using the `scraper\smashbook_title_urls.py` script. The URLs, along with their corresponding book titles, were stored in `scraper\smashbook_urls_1001.csv` and `scraper\smashbook_urls_2001.csv`.
+
+2. **Book Details Scraping:** Leveraging the acquired URLs, comprehensive book descriptions and genres were extracted using the `scraper\smashbook_details.py` script. The collected data was then saved in `scraper\smashbook_detils1.csv` and `scraper\smashbook_detils_2.csv`.
+
+3. **Data Integration:** The two CSV files, namely `smashbook_details1.csv` and `smashbook_details_2.csv`, were intelligently merged using the Python script in `scraper/joining.py`, resulting in the consolidated `scraper/book_details_merged_tables.csv`.
+
+In total, over 21200 meticulously curated book details were collected.
 
 ## Data Preprocessing
 
-At this stage, I first cleaned the data and find out the top 10 genres of each book titles and saved them in a new column and the code is in scraper/'cleaned_book_detail_with top10genres.py' and output is saved in 'scraper/book-details_10common_genres.csv'. <br>
-After that, I assigned colors for the top 10 genres of each titles in the rows. The code is in 'scraper/assigning_colors_for_top10genres.py' and the output file is saved in 'data/book_details_with_50colors.csv'. 
+The data preprocessing phase involved two key tasks:
+
+1. **Genre Categorization:** An innovative data cleaning process was executed, resulting in the identification of the top 10 genres for each book title. This transformation was achieved using the script `scraper/cleaned_book_detail_with_top10genres.py`, with the resulting data stored in `scraper/book-details_10common_genres.csv`.
+
+2. **Color Assignment:** The subsequent task was the allocation of colors to the top 10 genres for each title. The script `scraper/assigning_colors_for_top10genres.py` facilitated this process, leading to the creation of `data/book_details_with_50colors.csv`.
 
 ## Model Training
 
-Finetuned a `distilrobera-base` model from HuggingFace Transformers using Fastai and Blurr. The model training notebook can be viewed [here](https://github.com/NasrinRipa/Multilabel-Book-Genre-Cover-Hues/blob/main/notebooks/multilabel_text_classification.ipynb)
+The model training phase revolved around fine-tuning a `distilrobera-base` model from the HuggingFace Transformers library, utilizing the Fastai and Blurr frameworks. A detailed account of this process is provided in the [model training notebook](https://github.com/NasrinRipa/Multilabel-Book-Genre-Cover-Hues/blob/main/notebooks/multilabel_text_classification.ipynb).
 
 ## Model Compression and ONNX Inference
 
-The trained model has a memory of 300+MB. I compressed this model using ONNX quantization and brought it under 80MB. 
+The resultant trained model had a substantial memory footprint. To address this concern, the ONNX quantization technique was employed to compress the model's memory usage to a modest 80MB. The process is provided in the [ONNX inference notebook](https://github.com/NasrinRipa/Multilabel-Book-Genre-Cover-Hues/blob/main/notebooks/onnx_inference.ipynb)
 
 ## Model Deployment
 
-The compressed model is deployed to HuggingFace Spaces Gradio App. The implementation can be found in `deployment` folder or [here](https://huggingface.co/spaces/nasrin2023ripa/rainbow-genres-cover-ml-classifier)) 
+The compressed model is seamlessly accessible through the HuggingFace Spaces Gradio App. Detailed implementation specifics can be found in the `deployment` folder or directly via this [link](https://huggingface.co/spaces/nasrin2023ripa/rainbow-genres-cover-ml-classifier).
 
 ![Gradio App](deployment/for_gradio_app.png)
 
-
 ## Web Deployment
-Deployed a Flask App built to take descprition and genres, and recommends the book-cover colors as output. Check `flask ` branch. The website is live [here](https://multilabel-book-genre-cover-hues.onrender.com/) 
 
-<img src = "deployment/flask_app_home.png" width="800" height="400">
-<img src = "deployment/flask_app_results.png" width="800" height="400">
+An intuitive Flask application was meticulously developed, allowing users to input book descriptions and genres to receive recommended book-cover colors as output. The live application can be accessed through this [link](https://multilabel-book-genre-cover-hues.onrender.com/).
 
-### Acknowledgments
+![Flask App Home](deployment/flask_app_home.png)
+![Flask App Results](deployment/flask_app_results.png)
 
-I would like to express my heartfelt gratitude to Mohammad Sabik Irbaz, MasterCourse Bangladesh, who played a pivotal role in the success of this 3rd capstone project. Their expertise, guidance, and unwavering support were instrumental in shaping my skills and enabling me to complete this repository. I am truly grateful for their mentorship and valuable insights throughout this journey.
+## Acknowledgments
 
-
+Heartfelt gratitude is extended to Mohammad Sabik Irbaz and MasterCourse Bangladesh for their pivotal contributions in steering this capstone project. Their expertise, guidance, and unwavering support were crucial in shaping my skills and ensuring the successful completion of this repository. I am sincerely appreciative of their mentorship throughout this transformative journey.
