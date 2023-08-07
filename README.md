@@ -1,4 +1,5 @@
-# Multilabel Book Genre Cover Hues
+# Multilabel Book Genre Cover Hues 🌈
+
 
 Welcome to the Multilabel Book Genre Cover Hues repository! This project encompasses a comprehensive text classification model pipeline, including data collection, model training, deployment, and user-friendly web interfaces for predicting book cover colors based on different genres.
 
@@ -46,6 +47,12 @@ An intuitive Flask application was meticulously developed, allowing users to inp
 
 ![Flask App Home](deployment/flask_app_home.png)
 ![Flask App Results](deployment/flask_app_results.png)
+
+
+## Application
+
+Experience the innovation of our multi-label text classifier model, meticulously designed to provide insightful suggestions for book cover colors. Drawing inspiration from book descriptions (both with and without titles) and genres, this advanced model demonstrates its prowess by recommending an intricate palette of cover hues. Notably, the predicted set of 10 colors goes beyond conventional suggestions, offering the added benefit of generating a captivating multi-color Barcode for the book. Here, the prediction percentages intricately define the width of the bars, presenting an artistic representation of the book's essence. Unleash the potential of our model to infuse vibrant shades and imaginative storytelling into your literary world.
+
 
 ## Acknowledgments
 
