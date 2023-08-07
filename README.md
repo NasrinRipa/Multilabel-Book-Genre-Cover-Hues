@@ -45,8 +45,8 @@ The compressed model is seamlessly accessible through the HuggingFace Spaces Gra
 
 An intuitive Flask application was meticulously developed, allowing users to input book descriptions and genres to receive recommended book-cover colors as output. The live application can be accessed through this [link](https://multilabel-book-genre-cover-hues.onrender.com/).
 
-![Flask App Home](deployment/flask_app_home.png)
-![Flask App Results](deployment/flask_app_results.png)
+![Flask App Home](deployment/flask_app_home2.png)
+![Flask App Results](deployment/flask_app_results2.png)
 
 
 ## Application
