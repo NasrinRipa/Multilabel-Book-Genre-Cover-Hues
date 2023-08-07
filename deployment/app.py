@@ -18,11 +18,6 @@ inf_session = rt.InferenceSession('rainbow-genre-cover-classifier-quantized.onnx
 input_name = inf_session.get_inputs()[0].name
 output_name = inf_session.get_outputs()[0].name
 
-
-#inf_session = rt.InferenceSession('book-classifier-quantized.onnx')
-#input_name = inf_session.get_inputs()[0].name
-#output_name = inf_session.get_outputs()[0].name
-
 def classify_rainbow_cover_color(description_and_genres):
   input_ids = tokenizer(description_and_genres)['input_ids'][:512]
   logits = inf_session.run([output_name], {input_name: [input_ids]})[0]
