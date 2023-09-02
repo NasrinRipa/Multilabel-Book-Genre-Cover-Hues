@@ -54,6 +54,3 @@ An intuitive Flask application was meticulously developed, allowing users to inp
 Experience the innovation of our multi-label text classifier model, meticulously designed to provide insightful suggestions for book cover colors. Drawing inspiration from book descriptions (both with and without titles) and genres, this advanced model demonstrates its prowess by recommending an intricate palette of cover hues. Notably, the predicted set of 10 colors goes beyond conventional suggestions, offering the added benefit of generating a captivating multi-color Barcode for the book. Here, the prediction percentages intricately define the width of the bars, presenting an artistic representation of the book's essence. Unleash the potential of our model to infuse vibrant shades and imaginative storytelling into your literary world.
 
 
-## Acknowledgments
-
-Heartfelt gratitude is extended to Mohammad Sabik Irbaz and MasterCourse Bangladesh for their pivotal contributions in steering this capstone project. Their expertise, guidance, and unwavering support were crucial in shaping my skills and ensuring the successful completion of this repository. I am sincerely appreciative of their mentorship throughout this transformative journey.
